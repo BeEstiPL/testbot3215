@@ -29,8 +29,14 @@ bot.loadPlugin(cmd)
 
 bot.on('login',function(){
 	console.log("Logged In")
-	bot.chat("/gamemode spectator");
+	bot.chat("Yo wassup");
+	bot.chat("star is noob");
 });
+
+bot.on('physicTick', () => {
+ const entity = bot.nearestEntity()
+  if (entity) bot.lookAt(entity.position.offset(0, entity.height, 0))
+})
 
 bot.on('time', function(time) {
 	if(nightskip == "true"){
