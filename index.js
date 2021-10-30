@@ -25,7 +25,11 @@ function getRandomArbitrary(min, max) {
 
 bot.loadPlugin(cmd)
 
-
+bot.on('chat', (username, message) => {
+  if (message === 'what you think about star') {
+      	bot.chat("star is gae")
+	return
+  });
 
 bot.on('login',function(){
 	console.log("Logged In")
